@@ -16,13 +16,13 @@ import { TracksModule } from './modules/tracks/tracks.module';
 @Module({
   imports: [
     ConfigModule.forRoot(CONFIG_OPTIONS_PROVIDER),
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      useClass: TypeOrmConfigService,
-    }),
+    // TypeOrmModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   useClass: TypeOrmConfigService,
+    // }),
     WinstonLoggerModule,
-    StudentsModule,
-    TracksModule,
+    // StudentsModule,
+    // TracksModule,
     AnalyzingModule,
   ],
   providers: [

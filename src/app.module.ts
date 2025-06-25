@@ -9,6 +9,7 @@ import { AllExceptionFilter } from './common/filters/all-exception.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { WinstonLoggerModule } from './common/logger/winston-logger.module';
 import { ExtendRequest } from './common/middlewares/extend-request.middleware';
+import { StudentsModule } from './modules/students/students.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ExtendRequest } from './common/middlewares/extend-request.middleware';
       useClass: TypeOrmConfigService,
     }),
     WinstonLoggerModule,
+    StudentsModule
   ],
   providers: [
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },

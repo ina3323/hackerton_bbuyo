@@ -9,6 +9,7 @@ import { AllExceptionFilter } from './common/filters/all-exception.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { WinstonLoggerModule } from './common/logger/winston-logger.module';
 import { ExtendRequest } from './common/middlewares/extend-request.middleware';
+import { AnalyzingModule } from './modules/analyizing/analyzing.module';
 import { StudentsModule } from './modules/students/students.module';
 import { TracksModule } from './modules/tracks/tracks.module';
 
@@ -22,6 +23,7 @@ import { TracksModule } from './modules/tracks/tracks.module';
     WinstonLoggerModule,
     StudentsModule,
     TracksModule,
+    AnalyzingModule,
   ],
   providers: [
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },

@@ -6,7 +6,7 @@ import { WinstonLogger } from '../logger/winston-logger.serivce';
 
 @Catch()
 export class AllExceptionFilter implements ExceptionFilter {
-  constructor(private logger: WinstonLogger) {}
+  constructor(private logger: WinstonLogger) { }
 
   catch(exception: any, host: ArgumentsHost) {
     const ctx = host.switchToHttp();

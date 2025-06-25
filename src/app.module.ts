@@ -10,6 +10,7 @@ import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { WinstonLoggerModule } from './common/logger/winston-logger.module';
 import { ExtendRequest } from './common/middlewares/extend-request.middleware';
 import { StudentsModule } from './modules/students/students.module';
+import { TracksModule } from './modules/tracks/tracks.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { StudentsModule } from './modules/students/students.module';
       useClass: TypeOrmConfigService,
     }),
     WinstonLoggerModule,
-    StudentsModule
+    StudentsModule,
+    TracksModule,
   ],
   providers: [
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },

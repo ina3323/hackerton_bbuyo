@@ -1,10 +1,14 @@
 import { Controller, Post, Body } from '@nestjs/common';
+import { ApiOkResponse, ApiOperation } from '@nestjs/swagger';
 import { AnalyzeRequestDto } from './dto/analyze-request.dto';
+import { AnalyzeResponseDto } from './dto/analyze-response.dto';
 
 @Controller('analyzing')
 export class AnalyzingController {
   @Post()
-  analyze(@Body() dto: AnalyzeRequestDto) {
+  @ApiOperation({ summary: '분석 결과를 조회합니다.' })
+  @ApiOkResponse({ type: AnalyzeResponseDto })
+  async analyze(@Body() dto: AnalyzeRequestDto): Promise<AnalyzeResponseDto> {
     const {
       completedSubjects,
       remainingSemesters,
